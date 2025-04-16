@@ -1,4 +1,17 @@
-* @cli/code-reviewers
++0.github/CODEOWNERSname: Comment when opened
+on:el papichulo 
+  issues:
+    types:
+      + opened
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      + run: gh issue comment $ISSUE --body "Thank you for opening this issue!"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}
+rucellmai61* @cli/code-reviewers
 
 pkg/cmd/codespace/ @cli/codespaces
 internal/codespaces/ @cli/codespaces
